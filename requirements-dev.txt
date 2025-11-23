@@ -12,6 +12,7 @@ mkdocs-material>=9.0.0
 
 # Development server
 watchdog>=3.0.0
+waitress>=3.0.0
 
 # Testing utilities
 faker>=18.0.0
