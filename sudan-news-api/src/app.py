@@ -20,7 +20,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('api.log'),
+        logging.FileHandler('../../../shared/logs/api.log'),
         logging.StreamHandler()
     ]
 )
@@ -431,4 +431,5 @@ def health():
 
 if __name__ == '__main__':
     # Run Flask app (no scheduler - that's in the pipeline now)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    debug_mode = os.getenv('FLASK_ENV') != 'production'
+    app.run(debug=debug_mode, host='0.0.0.0', port=5000)

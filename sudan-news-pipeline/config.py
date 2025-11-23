@@ -1,7 +1,12 @@
 import os
+import platform
 from dotenv import load_dotenv
 
-load_dotenv()
+if platform.system() == 'Windows':
+    load_dotenv()
+else:
+    # On Ubuntu, load from shared/.env relative to project root
+    load_dotenv(os.path.join(os.path.dirname(__file__), '..', 'shared', '.env'))
 
 # Database
 DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///news_aggregator.db')

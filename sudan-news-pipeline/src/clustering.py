@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import platform
 from sentence_transformers import SentenceTransformer, util
 from datetime import datetime, timedelta
 import numpy as np
@@ -14,7 +15,12 @@ from shared_models.db import get_session
 from shared_models.repositories.article_repository import ArticleRepository
 from shared_models.repositories.cluster_repository import ClusterRepository
 
-load_dotenv()
+if platform.system() == 'Windows':
+    load_dotenv()
+else:
+    # On Ubuntu, load from shared/.env relative to project root
+    load_dotenv(os.path.join(os.path.dirname(__file__), '..', '..', 'shared', '.env'))
+
 login(os.getenv('HF_TOKEN'))
 
 # Configuration

@@ -15,8 +15,8 @@ keepalive = 2
 
 # Logging
 loglevel = "info"
-accesslog = "access.log"
-errorlog = "error.log"
+accesslog = "../../../shared/logs/access.log"
+errorlog = "../../../shared/logs/error.log"
 access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s" %(D)s'
 
 # Process naming
@@ -24,7 +24,7 @@ proc_name = "sudan-news-api"
 
 # Server mechanics
 daemon = False
-pidfile = "gunicorn.pid"
+pidfile = "../../../shared/logs/gunicorn.pid"
 user = "www-data"
 group = "www-data"
 tmp_upload_dir = None
@@ -35,7 +35,7 @@ tmp_upload_dir = None
 
 # Application
 wsgi_module = "src.app:app"
-pythonpath = "/app"
+pythonpath = "."
 
 # Development overrides (uncomment for dev)
 # workers = 1
