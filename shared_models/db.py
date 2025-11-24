@@ -11,7 +11,7 @@ else:
     load_dotenv('/var/www/sudanese_news/shared/.env')
 
 # Default database URL
-DEFAULT_DB_URL = 'sqlite:////var/www/sudanese_news/shared/news_aggregator.db' if platform.system() != 'Windows' else 'sqlite:///../shared/news_aggregator.db'
+DEFAULT_DB_URL = 'sqlite:////var/www/sudanese_news/shared/news_aggregator.db' if platform.system() != 'Windows' else 'sqlite:///../shared_models/news_aggregator.db'
 
 def get_database_url() -> str:
     """Get database URL from environment or use default"""

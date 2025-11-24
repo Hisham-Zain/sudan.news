@@ -409,7 +409,7 @@
                         {% if cluster.is_trending %}
                         <div class="trending-badge">🔥 رائج</div>
                         {% endif %}
-                        <h3 class="news-title">{{ cluster.headline }}</h3>
+                        <h3 class="news-title">{{ cluster.title }}</h3>
 
                         {% if cluster.bias_distribution %}
                         {% set pro = cluster.bias_distribution.pro_saf.percentage %}
