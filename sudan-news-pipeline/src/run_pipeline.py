@@ -31,9 +31,9 @@ from shared_models.repositories.entity_repository import EntityRepository
 from shared_models.models import Cluster
 
 import config
-from aggregator import parse_feed, is_sudan_related, normalize_arabic
-from nlp_pipeline import analyze_text
-from clustering import preprocess_articles, cluster_articles
+from .aggregator import parse_feed, is_sudan_related, normalize_arabic
+from .nlp_pipeline import analyze_text
+from .clustering import preprocess_articles, cluster_articles
 
 # Setup logging
 logging.basicConfig(

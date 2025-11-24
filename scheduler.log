@@ -1,0 +1,6 @@
+2025-11-24 07:11:02,676 - __main__ - INFO - Starting Sudan News Pipeline Scheduler
+2025-11-24 07:11:02,678 - __main__ - INFO - Pipeline will run every 2 hours
+2025-11-24 07:11:02,763 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-11-24 07:11:02,763 - __main__ - INFO - Scheduler started. Press Ctrl+C to exit.
+2025-11-24 07:11:02,769 - apscheduler.scheduler - INFO - Added job "Run news aggregation and clustering pipeline" to job store "default"
+2025-11-24 07:11:02,770 - apscheduler.scheduler - INFO - Scheduler started

@@ -5,7 +5,7 @@ import re
 from dateutil import parser
 from bs4 import BeautifulSoup
 from datetime import datetime
-from nlp_pipeline import analyze_text
+from .nlp_pipeline import analyze_text
 
 import sys
 from pathlib import Path
