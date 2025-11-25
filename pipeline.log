@@ -45,3 +45,85 @@
 2025-11-18 11:42:57,894 - sentence_transformers.SentenceTransformer - INFO - 14 prompts are loaded, with the keys: ['query', 'document', 'BitextMining', 'Clustering', 'Classification', 'InstructionRetrieval', 'MultilabelClassification', 'PairClassification', 'Reranking', 'Retrieval', 'Retrieval-query', 'Retrieval-document', 'STS', 'Summarization']
 2025-11-18 11:45:46,631 - __main__ - INFO - Clustering complete: 168 clusters created
 2025-11-18 11:45:46,633 - __main__ - INFO - Full pipeline run completed successfully
+2025-11-25 13:22:35,372 - __main__ - INFO - Starting full pipeline run
+2025-11-25 13:22:35,372 - __main__ - WARNING - File locking not available on this platform, skipping lock
+2025-11-25 13:22:35,372 - __main__ - INFO - Starting news aggregation
+2025-11-25 13:22:38,704 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 40 articles from https://sudanile.com/
+2025-11-25 13:24:57,153 - __main__ - INFO - Processed 40 articles from https://sudanile.com/
+2025-11-25 13:24:58,543 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 13 articles from https://www.dabangasudan.org/ar
+2025-11-25 13:25:40,163 - __main__ - INFO - Processed 13 articles from https://www.dabangasudan.org/ar
+2025-11-25 13:25:41,910 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 12 articles from https://www.radiotamazuj.org/ar
+2025-11-25 13:26:20,757 - __main__ - INFO - Processed 12 articles from https://www.radiotamazuj.org/ar
+2025-11-25 13:26:21,800 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 24 articles from https://www.altaghyeer.info/ar
+2025-11-25 13:27:46,432 - __main__ - INFO - Processed 24 articles from https://www.altaghyeer.info/ar
+2025-11-25 13:27:47,807 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 8 articles from https://suda.news
+2025-11-25 13:28:17,830 - __main__ - INFO - Processed 8 articles from https://suda.news
+2025-11-25 13:28:18,762 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 10 articles from https://tasamuhnews.com
+2025-11-25 13:28:53,287 - __main__ - INFO - Processed 10 articles from https://tasamuhnews.com
+2025-11-25 13:28:54,463 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 10 articles from https://www.sudaninet.net
+2025-11-25 13:29:31,149 - __main__ - INFO - Processed 10 articles from https://www.sudaninet.net
+2025-11-25 13:29:32,083 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 10 articles from https://www.alnilin.com
+2025-11-25 13:30:05,800 - __main__ - INFO - Processed 10 articles from https://www.alnilin.com
+2025-11-25 13:30:35,855 - sudan-news-pipeline.src.aggregator - ERROR - Error fetching data from https://www.almashhad.news/feed: HTTPSConnectionPool(host='www.almashhad.news', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000162AC81C190>, 'Connection to www.almashhad.news timed out. (connect timeout=15)'))
+2025-11-25 13:30:35,855 - __main__ - INFO - Processed 0 articles from https://www.almashhad.news
+2025-11-25 13:30:36,840 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 10 articles from https://kushnews.net
+2025-11-25 13:31:11,119 - __main__ - INFO - Processed 10 articles from https://kushnews.net
+2025-11-25 13:31:12,533 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 30 articles from https://sudafax.com
+2025-11-25 13:32:51,152 - __main__ - INFO - Processed 30 articles from https://sudafax.com
+2025-11-25 13:32:53,029 - sudan-news-pipeline.src.aggregator - ERROR - Error fetching data from https://www.tagpress.net/feed/: 403 Client Error: Forbidden for url: https://www.tagpress.net/feed/
+2025-11-25 13:32:53,032 - __main__ - INFO - Processed 0 articles from https://www.tagpress.net
+2025-11-25 13:32:53,847 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 20 articles from https://arabic.cnn.com
+2025-11-25 13:32:57,271 - __main__ - INFO - Processed 1 articles from https://arabic.cnn.com
+2025-11-25 13:32:58,380 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 10 articles from https://sudantribune.net
+2025-11-25 13:33:44,953 - __main__ - INFO - Processed 10 articles from https://sudantribune.net
+2025-11-25 13:33:47,717 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 10 articles from https://www.darfur24.com
+2025-11-25 13:34:28,470 - __main__ - INFO - Processed 10 articles from https://www.darfur24.com
+2025-11-25 13:34:30,266 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 10 articles from https://www.sudani.news
+2025-11-25 13:35:07,684 - __main__ - INFO - Processed 10 articles from https://www.sudani.news
+2025-11-25 13:35:08,990 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 10 articles from https://www.alsahafa.net
+2025-11-25 13:35:46,643 - __main__ - INFO - Processed 10 articles from https://www.alsahafa.net
+2025-11-25 13:35:47,532 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 25 articles from https://www.aljazeera.net
+2025-11-25 13:35:56,837 - __main__ - INFO - Processed 3 articles from https://www.aljazeera.net
+2025-11-25 13:35:57,851 - sudan-news-pipeline.src.aggregator - ERROR - Error fetching data from https://www.skynewsarabia.com/rss: 403 Client Error: Forbidden for url: https://www.skynewsarabia.com/rss
+2025-11-25 13:35:57,853 - __main__ - INFO - Processed 0 articles from https://www.skynewsarabia.com
+2025-11-25 13:35:58,798 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 24 articles from https://www.france24.com
+2025-11-25 13:36:28,914 - __main__ - INFO - Processed 9 articles from https://www.france24.com
+2025-11-25 13:36:30,486 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 50 articles from https://arabic.euronews.com
+2025-11-25 13:36:49,710 - __main__ - INFO - Processed 6 articles from https://arabic.euronews.com
+2025-11-25 13:36:50,726 - sudan-news-pipeline.src.aggregator - ERROR - Error parsing XML from https://feeds.feedburner.com/alalamfeed: no element found: line 34, column 237
+2025-11-25 13:36:50,728 - __main__ - INFO - Processed 0 articles from https://alalam.ir
+2025-11-25 13:36:52,081 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 100 articles from https://arabic.rt.com
+2025-11-25 13:37:16,484 - __main__ - INFO - Processed 8 articles from https://arabic.rt.com
+2025-11-25 13:37:17,370 - sudan-news-pipeline.src.aggregator - ERROR - An unexpected error occurred with https://www.alsumaria.tv/Rss/News/ar/49/%D8%AF%D9%88%D9%84%D9%8A%D8%A7%D8%AA: Incoming markup is of an invalid type: None. Markup must be a string, a bytestring, or an open filehandle.
+2025-11-25 13:37:17,373 - __main__ - INFO - Processed 0 articles from https://www.alsumaria.tv
+2025-11-25 13:37:23,044 - sudan-news-pipeline.src.aggregator - ERROR - An unexpected error occurred with https://alhiwar.tv/feed/: Incoming markup is of an invalid type: None. Markup must be a string, a bytestring, or an open filehandle.
+2025-11-25 13:37:23,047 - __main__ - INFO - Processed 0 articles from https://alhiwar.tv
+2025-11-25 13:37:23,925 - sudan-news-pipeline.src.aggregator - ERROR - Error fetching data from https://www.almasryalyoum.com/feed: 403 Client Error: Forbidden for url: https://www.almasryalyoum.com/feed
+2025-11-25 13:37:23,927 - __main__ - INFO - Processed 0 articles from https://www.almasryalyoum.com
+2025-11-25 13:37:24,833 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '12:18 | 25-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,833 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '12:02 | 25-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,836 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '11:55 | 25-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,837 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '11:23 | 25-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,838 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '11:06 | 25-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,839 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '11:04 | 24-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,839 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '11:02 | 24-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,840 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '13:11 | 23-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,841 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '13:10 | 23-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,842 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '12:49 | 23-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,843 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '10:36 | 16-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,844 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '13:54 | 11-11-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,845 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '22:02 | 31-10-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,846 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '20:15 | 25-10-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,846 - sudan-news-pipeline.src.aggregator - WARNING - Could not parse date '11:22 | 22-10-2025' from https://www.elkhabar.com
+2025-11-25 13:37:24,847 - sudan-news-pipeline.src.aggregator - INFO - Successfully parsed 15 articles from https://www.elkhabar.com
+2025-11-25 13:37:24,859 - __main__ - INFO - Processed 0 articles from https://www.elkhabar.com
+2025-11-25 13:37:24,871 - __main__ - INFO - Aggregation complete: 234 articles processed
+2025-11-25 13:37:24,871 - __main__ - INFO - Starting event clustering
+2025-11-25 13:37:24,879 - __main__ - INFO - Processing 161 unclustered articles
+2025-11-25 13:37:24,897 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-11-25 13:37:24,897 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: google/embeddinggemma-300m
+2025-11-25 13:37:33,052 - sentence_transformers.SentenceTransformer - INFO - 14 prompts are loaded, with the keys: ['query', 'document', 'BitextMining', 'Clustering', 'Classification', 'InstructionRetrieval', 'MultilabelClassification', 'PairClassification', 'Reranking', 'Retrieval', 'Retrieval-query', 'Retrieval-document', 'STS', 'Summarization']
+2025-11-25 13:38:54,067 - __main__ - INFO - Clustering complete: 109 clusters created
+2025-11-25 13:38:54,069 - __main__ - INFO - Updating trending topics...
+2025-11-25 13:38:54,319 - __main__ - INFO - Trending updates complete. Checked 201 clusters.
+2025-11-25 13:38:54,320 - __main__ - INFO - Full pipeline run completed successfully
