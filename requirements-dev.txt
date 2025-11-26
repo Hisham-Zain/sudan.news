@@ -5,6 +5,7 @@ python-dotenv>=0.19.0
 gunicorn>=20.0.0
 sqlalchemy>=1.4.0
 alembic>=1.7.0
+firebase-admin>=6.0.0
 
 # Pipeline dependencies
 click>=8.0.0
