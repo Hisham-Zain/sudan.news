@@ -106,6 +106,25 @@ gunicorn --config gunicorn.conf.py src.app:app
 - Body: `{"user_id": "optional", "device_id": "required", "token": "required", "platform": "android|ios"}`
 - Response: Success confirmation
 
+### Push Notifications
+
+**POST /api/send_notification**
+- Send custom push notification to all users
+- Body: `{"title": "required", "body": "required", "data": {"key": "value"}}`
+- Response: `{"success": 5, "failure": 0}`
+
+**POST /api/notify_new_cluster/{cluster_id}**
+- Send notification for a new cluster
+- Response: Notification result with success/failure counts
+
+**POST /api/notify_popular_clusters**
+- Send notifications for clusters with many sources (≥10 by default)
+- Response: Results for each popular cluster notified
+
+**GET /api/notification_stats**
+- Get notification statistics and popular clusters info
+- Response: Token stats, popular clusters count, Firebase status
+
 ### Health Check
 
 **GET /health**

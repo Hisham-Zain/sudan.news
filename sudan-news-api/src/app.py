@@ -36,6 +36,9 @@ from shared_models.repositories.article_repository import ArticleRepository
 from shared_models.repositories.source_repository import SourceRepository
 from shared_models.timezone_utils import now, to_app_timezone
 
+# Import notification service
+from notification_service import notification_service
+
 # Setup Flask app
 app = Flask(__name__,
             template_folder=str(Path(__file__).parent.parent / 'templates'),
@@ -421,6 +424,83 @@ def api_register_token():
 
         return jsonify({'success': True})
     except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# Notification API endpoints
+
+@app.route('/api/send_notification', methods=['POST'])
+def api_send_notification():
+    """API endpoint to send custom push notifications."""
+    data = request.get_json()
+    if not data:
+        return jsonify({'error': 'No data provided'}), 400
+
+    title = data.get('title')
+    body = data.get('body')
+    data_payload = data.get('data', {})
+
+    if not title or not body:
+        return jsonify({'error': 'Title and body are required'}), 400
+
+    try:
+        result = notification_service.send_to_all_users(title, body, data_payload)
+        return jsonify(result)
+    except Exception as e:
+        logger.error(f"Error sending notification: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/notify_new_cluster/<int:cluster_id>', methods=['POST'])
+def api_notify_new_cluster(cluster_id):
+    """API endpoint to send notification for a new cluster."""
+    try:
+        result = notification_service.send_new_cluster_notification(cluster_id)
+        return jsonify(result)
+    except Exception as e:
+        logger.error(f"Error sending new cluster notification: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/notify_popular_clusters', methods=['POST'])
+def api_notify_popular_clusters():
+    """API endpoint to send notifications for popular clusters."""
+    try:
+        popular_clusters = notification_service.get_popular_clusters_for_notification()
+
+        results = []
+        for cluster in popular_clusters:
+            result = notification_service.send_popular_cluster_notification(cluster['id'])
+            results.append({
+                'cluster_id': cluster['id'],
+                'title': cluster['title'],
+                'sources': cluster['number_of_sources'],
+                'notification_result': result
+            })
+
+        return jsonify({
+            'total_clusters': len(popular_clusters),
+            'results': results
+        })
+    except Exception as e:
+        logger.error(f"Error sending popular cluster notifications: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/notification_stats')
+def api_notification_stats():
+    """API endpoint to get notification statistics."""
+    try:
+        with get_session() as session:
+            token_repo = TokenRepository(session)
+            stats = token_repo.get_token_stats()
+
+        popular_clusters = notification_service.get_popular_clusters_for_notification()
+
+        return jsonify({
+            'token_stats': stats,
+            'popular_clusters_count': len(popular_clusters),
+            'popular_clusters': popular_clusters,
+            'firebase_initialized': bool(notification_service._is_initialized())
+        })
+    except Exception as e:
+        logger.error(f"Error getting notification stats: {e}")
         return jsonify({'error': str(e)}), 500
 
 # Health check endpoint
