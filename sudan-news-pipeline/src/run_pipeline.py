@@ -22,6 +22,7 @@ except ImportError:
 # Add project root to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent)) # Also keep pipeline root for config
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'sudan-news-api' / 'src')) # Add API src for notification service
 
 from shared_models.db import get_session
 from shared_models.repositories.article_repository import ArticleRepository
@@ -45,6 +46,14 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+# Import requests for API calls to notification service
+try:
+    import requests
+    REQUESTS_AVAILABLE = True
+except ImportError:
+    logger.warning("Requests library not available for notifications")
+    REQUESTS_AVAILABLE = False
 
 @contextmanager
 def pipeline_lock():
@@ -223,6 +232,36 @@ def update_trending():
         session.commit()
         logger.info(f"Trending updates complete. Checked {len(recent_clusters)} clusters.")
 
+def send_pipeline_completion_notification():
+    """Send notification about successful pipeline completion via API"""
+    if not REQUESTS_AVAILABLE:
+        logger.info("Requests not available, skipping pipeline completion notification")
+        return
+
+    try:
+        # Get API base URL from environment or default
+        api_base_url = os.getenv('API_BASE_URL', 'http://localhost:5000')
+
+        notification_data = {
+            "title": "تحديث الأخبار",
+            "body": "تم تحديث الأخبار بنجاح - Pipeline completed successfully"
+        }
+
+        response = requests.post(
+            f"{api_base_url}/api/send_notification",
+            json=notification_data,
+            timeout=10
+        )
+
+        if response.status_code == 200:
+            result = response.json()
+            logger.info(f"Pipeline completion notification sent: {result}")
+        else:
+            logger.warning(f"Failed to send notification: HTTP {response.status_code} - {response.text}")
+
+    except Exception as e:
+        logger.warning(f"Failed to send pipeline completion notification: {e}")
+
 def run_full_pipeline():
     """Run the complete pipeline: aggregate → cluster"""
     logger.info("Starting full pipeline run")
@@ -232,6 +271,7 @@ def run_full_pipeline():
             aggregate_news()
             cluster_news()
             update_trending()
+            send_pipeline_completion_notification()
             logger.info("Full pipeline run completed successfully")
     except RuntimeError as e:
         logger.error(f"Pipeline run failed: {e}")

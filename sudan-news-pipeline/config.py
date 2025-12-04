@@ -30,7 +30,7 @@ NLP_MODEL = os.getenv('NLP_MODEL', 'gemma-3-27b-it')
 
 # Clustering Parameters
 SIMILARITY_THRESHOLD = float(os.getenv('SIMILARITY_THRESHOLD', '0.5'))
-TIME_WINDOW_HOURS = int(os.getenv('TIME_WINDOW_HOURS', '72'))
+TIME_WINDOW_HOURS = int(os.getenv('TIME_WINDOW_HOURS', '300'))
 MAX_ARTICLES_PER_CLUSTER = int(os.getenv('MAX_ARTICLES_PER_CLUSTER', '50'))
 
 # Pipeline Settings

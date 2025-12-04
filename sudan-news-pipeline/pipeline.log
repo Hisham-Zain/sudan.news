@@ -1450,3 +1450,6 @@ Please retry in 29.381995166s. [links {
 2025-11-24 16:55:14,150 - __main__ - INFO - Updating trending topics...
 2025-11-24 16:55:14,351 - __main__ - INFO - Trending updates complete. Checked 117 clusters.
 2025-11-24 16:55:14,352 - __main__ - INFO - Full pipeline run completed successfully
+2025-12-04 08:10:46,328 - src.run_pipeline - WARNING - Notification service not available: No module named 'sudan_news_api'
+2025-12-04 08:11:59,986 - notification_service - INFO - Firebase initialized successfully
+2025-12-04 08:12:28,591 - notification_service - INFO - Firebase initialized successfully

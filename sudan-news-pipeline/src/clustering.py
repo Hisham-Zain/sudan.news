@@ -15,18 +15,21 @@ from shared_models.db import get_session
 from shared_models.repositories.article_repository import ArticleRepository
 from shared_models.repositories.cluster_repository import ClusterRepository
 
+# Import config
+import config
+
 if platform.system() == 'Windows':
     load_dotenv()
 else:
     # On Ubuntu, load from absolute path
     load_dotenv('/var/www/sudanese_news/shared/.env')
 
-login(os.getenv('HF_TOKEN'))
+login(config.HF_TOKEN)
 
-# Configuration
-MODEL_NAME = 'google/embeddinggemma-300m'  # Changed the model name
-SIMILARITY_THRESHOLD = 0.5  # Stricter threshold for better event matching
-TIME_WINDOW_HOURS = 72
+# Configuration - now using centralized config
+MODEL_NAME = config.EMBEDDING_MODEL
+SIMILARITY_THRESHOLD = config.SIMILARITY_THRESHOLD
+TIME_WINDOW_HOURS = config.TIME_WINDOW_HOURS
 
 def log_system_info():
     """Log GPU and initial memory information"""
