@@ -129,45 +129,75 @@ def parse_feed(feed_url, source_name):
     
     return []
 
-def is_sudan_related(text, source_url):
-    """
-    Determine if text is Sudan-related using tiered keyword scoring.
-    Strict filtering for international sources, permissive for local sources.
-    """
-    # Normalize Arabic text
-    text = normalize_arabic(text.lower())
+def normalize_text(text):
+    """Normalize text by removing punctuation and converting to lowercase."""
+    import re
+    text = re.sub(r'[^\w\s]', '', text)
+    return text.lower()
 
-    # Check for strong keywords (immediate accept)
-    for keyword in config.TIER_A_STRONG:
-        normalized_kw = normalize_arabic(keyword.lower())
-        if normalized_kw in text:
+def is_sudan_related(article, source_type='international'):
+    """
+    Determine if article is Sudan-related using zone weighting + exclusion filtering.
+    article: dict containing 'headline', 'description'
+    source_type: 'international' or 'local'
+    """
+    # 1. Prepare Text Zones
+    title_text = normalize_text(article.get('headline', ''))
+    body_text = normalize_text(article.get('description', ''))
+    full_text = title_text + " " + body_text
+
+    # If local, keep permissive logic
+    if source_type == 'local':
+        # Simple check: any Sudan-related keyword in title or body
+        for kw in config.TIER_A_DEFINITIVE + config.TIER_A_STRONG:
+            if normalize_arabic(kw.lower()) in full_text or kw.lower() in full_text:
+                return True
+        return len([kw for kw in config.TIER_B_CONTEXT if normalize_arabic(kw.lower()) in full_text]) >= 1
+
+    # --- INTERNATIONAL LOGIC ---
+
+    # 2. The Exclusion Check (Negative Filtering)
+    # Check if the article is clearly about a different major conflict
+    has_exclusion_word = any(kw.lower() in title_text for kw in config.EXCLUSION_KEYWORDS)
+
+    # 3. Definitive Check (The "Golden Ticket")
+    # If a definitive keyword is in the TITLE, accept immediately.
+    for kw in config.TIER_A_DEFINITIVE:
+        if normalize_arabic(kw.lower()) in title_text or kw.lower() in title_text:
             return True
 
-    # Calculate score from context and weak keywords
+    # If a definitive keyword is in the BODY, accept (unless it's an excluded topic)
+    tier_a_in_body = any(
+        normalize_arabic(kw.lower()) in body_text or kw.lower() in body_text
+        for kw in config.TIER_A_DEFINITIVE
+    )
+
+    if tier_a_in_body and not has_exclusion_word:
+        return True
+
+    # If it has an exclusion word (e.g., Gaza), it MUST have "Sudan" explicitly in the title
+    # to pass. Since we failed the "Tier A in Title" check above, we reject here.
+    if has_exclusion_word:
+        return False
+
+    # 4. Contextual Scoring (Only if no definitive match found yet)
     score = 0
 
-    # Tier B: Context keywords (2 points each)
-    for keyword in config.TIER_B_CONTEXT:
-        normalized_kw = normalize_arabic(keyword.lower())
-        if normalized_kw in text:
-            score += 2
-
-    # Tier C: Weak regional keywords (1 point each)
-    for keyword in config.TIER_C_WEAK:
-        normalized_kw = normalize_arabic(keyword.lower())
-        if normalized_kw in text:
+    # Weight Title matches x3
+    for kw in config.TIER_B_CONTEXT:
+        norm_kw = normalize_arabic(kw.lower())
+        if norm_kw in title_text:
+            score += 3
+        elif norm_kw in body_text:
             score += 1
 
-    # Determine if source is international
-    is_international = source_url in config.INTERNATIONAL_SOURCES
+    # 5. Thresholds
+    # If we have no Tier A keywords, we need a very high context score
+    # implying the article talks about "Army" + "Clashes" + "Jeddah" + "Negotiations"
+    if score >= 4:
+        return True
 
-    # Apply different thresholds based on source type
-    if is_international:
-        # Strict: need strong keyword OR score >= 3
-        return score >= 3
-    else:
-        # Permissive for local sources: score >= 1
-        return score >= 1
+    return False
 
 if __name__ == '__main__':
     # Simple test run if executed directly
@@ -191,7 +221,7 @@ if __name__ == '__main__':
             parsed_articles = parse_feed(feed['url'], feed['source'])
             inserted_count = 0
             for article_data in parsed_articles:
-                if category == 'local' or (category == 'international' and is_sudan_related(article_data['headline'] + ' ' + article_data['description'], source_url)):
+                if is_sudan_related(article_data, category):
                     published_at = article_data['published_at'] if article_data['published_at'] != "N/A" else None
 
                     # Insert article using repository
