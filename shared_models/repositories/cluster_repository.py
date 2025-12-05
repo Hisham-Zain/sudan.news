@@ -338,8 +338,8 @@ class ClusterRepository:
             return False
         
         current_time = now()
-        six_hours_ago = now - timedelta(hours=6)
-        twelve_hours_ago = now - timedelta(hours=12)
+        six_hours_ago = current_time - timedelta(hours=6)
+        twelve_hours_ago = current_time - timedelta(hours=12)
         
         # Count articles in last 6 hours vs previous 6 hours
         recent_count = 0
@@ -367,7 +367,7 @@ class ClusterRepository:
         # Update cluster
         cluster.coverage_velocity = round(velocity, 2)
         cluster.is_trending = velocity > 1.5 and cluster.number_of_sources >= 3
-        cluster.last_coverage_check = now.isoformat()
+        cluster.last_coverage_check = current_time.isoformat()
         
         # Set first_seen_at if not already set
         if not cluster.first_seen_at:
