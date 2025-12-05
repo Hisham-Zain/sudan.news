@@ -240,7 +240,7 @@ def send_pipeline_completion_notification():
 
     try:
         # Get API base URL from environment or default
-        api_base_url = os.getenv('API_BASE_URL', 'http://localhost:5000')
+        api_base_url = os.getenv('API_BASE_URL', 'http://localhost:8000')
 
         notification_data = {
             "title": "تحديث الأخبار",
