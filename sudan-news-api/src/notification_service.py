@@ -7,6 +7,7 @@ ONLY FCM is used. Expo notifications have been completely removed.
 
 import os
 import logging
+from datetime import datetime
 from typing import List, Dict, Any, Optional
 import firebase_admin
 from firebase_admin import credentials, messaging
@@ -178,9 +179,36 @@ class NotificationService:
             if not cluster:
                 return {'error': f'Cluster {cluster_id} not found'}
 
-            article_count = len(cluster.get('articles', []))
-            title = "خبر متطور"
-            body = f"مجموعة أخبار تحتوي على {article_count} مقالة: {cluster['title'][:40]}..."
+            articles = cluster.get('articles', [])
+            if not articles:
+                return {'error': f'No articles found for cluster {cluster_id}'}
+
+            article_count = len(articles)
+
+            # Find the earliest article by published_at date
+            earliest_article = None
+            earliest_date = None
+
+            for article in articles:
+                if article.get('published_at'):
+                    try:
+                        article_date = datetime.fromisoformat(article['published_at'].replace('Z', '+00:00'))
+                        if earliest_date is None or article_date < earliest_date:
+                            earliest_date = article_date
+                            earliest_article = article
+                    except (ValueError, TypeError):
+                        continue
+
+            # Use earliest article's headline as title, fallback to cluster title
+            if earliest_article:
+                title = earliest_article.get('headline', cluster['title'])[:50]
+                # Format the date for display
+                date_str = earliest_date.strftime('%Y-%m-%d %H:%M') if earliest_date else ''
+                body = f"خبر متطور: {article_count} مصادر - {date_str}"
+            else:
+                # Fallback to original logic if no dates available
+                title = cluster['title'][:50]
+                body = f"مجموعة أخبار تحتوي على {article_count} مقالة"
 
             data = {
                 "clusterId": str(cluster_id),

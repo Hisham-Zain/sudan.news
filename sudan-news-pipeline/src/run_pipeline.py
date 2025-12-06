@@ -268,6 +268,34 @@ def send_pipeline_completion_notification():
     except Exception as e:
         logger.warning(f"Failed to send pipeline completion notification: {e}")
 
+def send_popular_clusters_notification():
+    """Send notifications for popular clusters (2+ articles) via API"""
+    if not REQUESTS_AVAILABLE:
+        logger.info("Requests not available, skipping popular clusters notification")
+        return
+
+    try:
+        # Get API base URL from environment or default
+        api_base_url = os.getenv('API_BASE_URL', 'http://localhost:8000')
+
+        response = requests.post(
+            f"{api_base_url}/api/notify_popular_clusters",
+            timeout=10
+        )
+
+        if response.status_code == 200:
+            result = response.json()
+            total_clusters = result.get('total_clusters', 0)
+            if total_clusters > 0:
+                logger.info(f"Popular clusters notifications sent for {total_clusters} clusters")
+            else:
+                logger.info("No popular clusters found for notification")
+        else:
+            logger.warning(f"Failed to send popular clusters notification: HTTP {response.status_code} - {response.text}")
+
+    except Exception as e:
+        logger.warning(f"Failed to send popular clusters notification: {e}")
+
 def run_full_pipeline():
     """Run the complete pipeline: aggregate → cluster"""
     logger.info("Starting full pipeline run")
@@ -278,6 +306,7 @@ def run_full_pipeline():
             cluster_news()
             update_trending()
             send_pipeline_completion_notification()
+            send_popular_clusters_notification()
             logger.info("Full pipeline run completed successfully")
     except RuntimeError as e:
         logger.error(f"Pipeline run failed: {e}")
