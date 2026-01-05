@@ -1,0 +1,438 @@
+{
+  "matched_domain": "sudanile.com",
+  "outlet_name": "Sudanile (صحيفة سودانايل الإلكترونية)",
+  "founded_year": "2001",
+  "headquarters": {
+    "city": "Unknown (Operations in Exile/Europe)",
+    "country": "Sweden (Europe Office verified via +46 phone code and Editor location)"
+  },
+  "ownership_structure": "Independent; Controlled by Editor-in-Chief Tarig Algazoli (Tarek Al-Jazouli). No corporate parent found.",
+  "funding_model": "Hybrid: Reader/Activist Donations and Digital Advertising (Google Ads). Self-described as non-profit.",
+  "political_alignment": "Independent / Pro-Democracy. Critical of both SAF and RSF; historically aligned with civil opposition movements.",
+  "credibility_rating": "Medium-High (Cited by IREX and UN panels; frequently targeted by state hacking/censorship due to independent reporting)",
+  "target_audience": "Sudanese Public (Domestic and Diaspora)",
+  "verification_status": "High confidence - Sources match domain"
+}
+
+{
+  "matched_domain": "https://www.dabangasudan.org/ar",
+  "outlet_name": "Radio Dabanga (Dabanga - Radio TV Online)",
+  "founded_year": "2008",
+  "headquarters": {
+    "city": "Amsterdam",
+    "country": "Netherlands"
+  },
+  "ownership_structure": "Stichting Dabanga Foundation (Non-profit Foundation registered in the Netherlands; originally a project of the NGO 'Free Press Unlimited')",
+  "funding_model": "Donor-funded (supported by a consortium of international donors including Free Press Unlimited, the Dutch Government, and other international media assistance agencies)",
+  "political_alignment": "Left-Center / Pro-Democracy (Source: Media Bias/Fact Check). Operates as an 'exiled media' outlet; historically critical of the Al-Bashir regime and the Sudanese Armed Forces (SAF), advocating for civilian rule and human rights.",
+  "credibility_rating": "Mixed Factual Reporting (Source: Media Bias/Fact Check). Rated 'Mixed' due to necessary reliance on anonymous local sources in conflict zones which makes independent verification difficult, and occasional use of emotional language.",
+  "target_audience": "Sudanese citizens (particularly in Darfur and conflict zones), the Sudanese diaspora, and international policymakers.",
+  "verification_status": "High confidence - Sources match domain. The URL is the official digital portal for the Amsterdam-based Radio Dabanga."
+}
+
+{
+  "matched_domain": "https://www.radiotamazuj.org/ar",
+  "outlet_name": "Radio Tamazuj",
+  "founded_year": "2011",
+  "headquarters": {
+    "city": "Hilversum (Server/Registration) / Originally Juba (Exiled)",
+    "country": "Netherlands"
+  },
+  "ownership_structure": "Independent non-profit legal entity (Netherlands-based). Originally founded and supported by the Dutch NGO 'Free Press Unlimited' (FPU) but became operationally independent as of 2020.",
+  "funding_model": "Donor-funded (Sources have included Free Press Unlimited, USIP, Cordaid, and individual donations via Donorbox)",
+  "political_alignment": "Independent / Critical of South Sudanese Government (Self-describes as 'editorially independent'; blocked by the South Sudanese government for 'hostile' reporting; focuses on human rights, peace-building, and accountability)",
+  "credibility_rating": "High Credibility (Cited as a reliable source by the UN, World Bank, and Reporters Without Borders; operates from exile to avoid censorship)",
+  "target_audience": "Citizens of South Sudan, southern states of Sudan, and borderland regions (Broadcasts in English, Arabic, and Juba Arabic)",
+  "verification_status": "High confidence - Sources match domain and historical context of exile"
+}
+
+{
+  "matched_domain": "https://www.altaghyeer.info/ar",
+  "outlet_name": "Al Taghyeer (The Change) Electronic Newspaper",
+  "founded_year": "2013 (Launched May 3, World Press Freedom Day)",
+  "headquarters": {
+    "city": "Khartoum (Editorial Origin) / London & Dubai (Technical/Legal Hosting)",
+    "country": "Sudan / UK & UAE (Exile Operations)"
+  },
+  "ownership_structure": "Independent Collective of Sudanese Journalists (Editorial Control). *Note: Technical infrastructure and domain administration are linked to 'Mainstream Media Ltd' (UK) and 'Big News Network FZ LLC' (UAE), likely as a hosting/platform arrangement for exile media security.*",
+  "funding_model": "Grant-based (International Media Development Aid) and Diaspora Support. Operates as a non-profit, independent outlet.",
+  "political_alignment": "Pro-Democracy / Reformist / Anti-Military Rule. (Editorially aligned with the 'Forces of Freedom and Change' and civil democratic transition; critical of both SAF and RSF, though accused by military supporters of favoring the civilian 'Taqadum' coalition).",
+  "credibility_rating": "High Credibility (Cited by Amnesty International, UNESCO, and Chatham House; Editor-in-Chief Rasha Awad is a globally recognized journalist; frequently censored/blocked by Sudanese authorities for independent reporting).",
+  "target_audience": "Sudanese citizens (domestic and diaspora), international policymakers, and human rights monitors.",
+  "verification_status": "High confidence - Domain confirmed as the official outlet of the well-known Sudanese newspaper 'Al Taghyeer', led by Editor-in-Chief Rasha Awad."
+}
+
+{
+  "matched_domain": "https://suda.news",
+  "outlet_name": "Sudan News (اخبار السودان)",
+  "founded_year": "2023 (Approximate - App launch/Domain activity)",
+  "headquarters": {
+    "city": "Unknown (Developer linked to Saudi Arabia)",
+    "country": "Sudan / Saudi Arabia (Operational base)"
+  },
+  "ownership_structure": "Individual / Private (Linked to developer 'Motaz Mohamed Hussien Osman' via associated Android App 'Moataz apps')",
+  "funding_model": "Programmatic Advertising / Ad-supported (Contains ads)",
+  "political_alignment": "Mixed / Aggregator (Republishes content from conflicting sources including SAF, RSF, and international outlets without independent editorial filtering)",
+  "credibility_rating": "Low (Aggregator of unverified raw statements; cited in research regarding digital conflict zones but lacks transparency and original fact-checking)",
+  "target_audience": "Sudanese diaspora and locals seeking consolidated war updates",
+  "verification_status": "High confidence - Domain matches 'Sudan News' aggregator app; not a traditional newsroom"
+}
+
+{
+  "matched_domain": "https://tasamuhnews.com",
+  "outlet_name": "Tasamuh News (تسامح نيوز)",
+  "founded_year": "2020",
+  "headquarters": {
+    "city": "Khartoum (Currently operating remotely/Port Sudan due to conflict)",
+    "country": "Sudan"
+  },
+  "ownership_structure": "Privately owned (Likely by Sudanese journalist network including Osman Alhaj; features prominent columns by Al-Hindi Ezzedine)",
+  "funding_model": "Advertising (Speakol), potential state-linked contracts (publishes official tenders for Sudanese Petroleum Corporation)",
+  "political_alignment": "Pro-Sudanese Armed Forces (SAF) / Anti-RSF (Strongly nationalist, critical of the Rapid Support Forces, supportive of Gen. Al-Burhan)",
+  "credibility_rating": "Mixed - Partisan (Reliable for official SAF/Port Sudan government decrees; highly biased in conflict reporting, using terms like 'rebel militia' for RSF)",
+  "target_audience": "Sudanese public, researchers, and diaspora interested in local political and security developments",
+  "verification_status": "High confidence - Content, WHOIS dates, and editorial stance consistently match the domain"
+}
+
+{
+  "matched_domain": "https://www.sudaninet.net",
+  "outlet_name": "Sudani Net (سوداني نت)",
+  "founded_year": "2011 (Domain registered Jan 12, 2011)",
+  "headquarters": {
+    "city": "Unknown (Likely Khartoum/Omdurman or operating in exile)",
+    "country": "Sudan"
+  },
+  "ownership_structure": "Opaque (Private/State-Aligned). Distinct from 'Sudan News.Net' (Big News Network). No transparent corporate parent listed; operates as a pro-government digital outlet.",
+  "funding_model": "Opaque (Likely state-aligned support or self-funded advertising)",
+  "political_alignment": "Pro-Sudanese Armed Forces (SAF) / Anti-RSF. Content consistently refers to the Rapid Support Forces as 'militia' or 'rebels' and publishes official SAF statements.",
+  "credibility_rating": "Mixed/Low (State-aligned bias). Functions primarily as a platform for official government/military narratives rather than independent investigative journalism.",
+  "target_audience": "Sudanese nationals (domestic and diaspora) supporting the SAF narrative.",
+  "verification_status": "High confidence - Sources match domain. Differentiated from 'Sudan News.Net'."
+}
+
+{
+  "matched_domain": "https://www.alnilin.com",
+  "outlet_name": "Alnilin (النيلين)",
+  "founded_year": "2000",
+  "headquarters": {
+    "city": "Khartoum",
+    "country": "Sudan"
+  },
+  "ownership_structure": "Private / Independent (Operated by editorial team led by Moatasem Al-Sir; no large media conglomerate parent found)",
+  "funding_model": "Digital Advertising / Commercial Revenue",
+  "political_alignment": "Mixed / Aggregator (Platform republishes content from pro-SAF, pro-RSF, and independent sources without a singular editorial stance)",
+  "credibility_rating": "Medium (Functions primarily as a news aggregator and forum; reliability depends on the original source of the republished articles rather than the site itself)",
+  "target_audience": "Sudanese General Public and Diaspora",
+  "verification_status": "High confidence - Sources match domain"
+}
+
+{
+  "matched_domain": "https://www.almashhad.news",
+  "outlet_name": "Al Mashhad Al Yemeni (المشهد اليمني)",
+  "founded_year": "2014 (Brand established); 2020 (Current domain effective date)",
+  "headquarters": {
+    "city": "Decentralized / Exile (Editorial)",
+    "country": "Yemen (Originally Sana'a, now operating from non-Houthi areas or abroad due to legal persecution)"
+  },
+  "ownership_structure": "Privately owned by Abdul Rahman Saleh Al-Bail (Publisher & Editor-in-Chief)",
+  "funding_model": "Ad-supported (Programmatic advertising verified on site) and private funding likely aligned with the Yemeni Legitimacy Government",
+  "political_alignment": "Anti-Houthi / Pro-Yemeni Legitimacy Government (Consistently refers to Houthi governance as a 'coup' and 'militias'; cited in UN reports exposing Houthi violations)",
+  "credibility_rating": "Medium (Partisan Source)",
+  "target_audience": "Yemeni nationals (local and diaspora), observers of the Yemen conflict",
+  "verification_status": "High confidence - Sources match domain. DISTINCT from the Dubai-based 'Al Mashhad TV' (Tony Khalife)."
+}
+
+{
+  "matched_domain": "https://kushnews.net",
+  "outlet_name": "Kush News (Identified internally as/linked to 'Khartoum Star')",
+  "founded_year": "2018 (Approximate; active prior to Oct 2019 Facebook takedowns)",
+  "headquarters": {
+    "city": "Khartoum",
+    "country": "Sudan"
+  },
+  "ownership_structure": "Opaque / Proxy Network (Forensically linked to the 'Khartoum Star' Russian influence network associated with Yevgeny Prigozhin/Wagner Group)",
+  "funding_model": "Undisclosed (Historically linked to foreign influence operations funding)",
+  "political_alignment": "Pro-Russia / Anti-Western / State-Statist (The site was de-platformed by Facebook and Twitter in 2019 for 'Coordinated Inauthentic Behavior' linked to Russia)",
+  "credibility_rating": "Low (Flagged as a disinformation asset by Stanford Internet Observatory; acts as an aggregator mixed with influence content)",
+  "target_audience": "Sudanese domestic audience (Arabic language)",
+  "verification_status": "High confidence - Domain explicitly hosted defense letters for the 'Khartoum Star' Russian network in 2019"
+}
+
+{
+  "matched_domain": "Sudafax.com",
+  "outlet_name": "Sudafax (سودافاكس) / Sudafax Network",
+  "founded_year": "Active since at least 2016 (Earliest verified content archives)",
+  "headquarters": {
+    "city": "Unknown (Server/Admin located in Germany)",
+    "country": "Germany"
+  },
+  "ownership_structure": "Individual Ownership (Ahmed Idriss Mustafa Omer)",
+  "funding_model": "Programmatic Advertising (AdSense/Display Ads)",
+  "political_alignment": "Populist / Independent Aggregator (Self-claimed neutral; flagged for inflammatory/anti-migrant content by watchdogs)",
+  "credibility_rating": "Low to Mixed (Aggregator with history of unverified/hate speech content)",
+  "target_audience": "Sudanese Nationals and Diaspora / 'Arab Elite'",
+  "verification_status": "High confidence - Owner identity and server location verified via WHOIS and developer data"
+}
+
+
+{
+  "matched_domain": "Tagpress.net",
+  "outlet_name": "Tag Press (تاق برس)",
+  "founded_year": "Circa 2018 (Active since at least September 2018)",
+  "headquarters": {
+    "city": "Khartoum (Original)",
+    "country": "Sudan (Operations likely decentralized/exiled due to conflict)"
+  },
+  "ownership_structure": "Private / Independent (Founded by prominent Sudanese journalist Salah al-Din Awwada)",
+  "funding_model": "Advertising / Self-funded (Site features 'For Advertising' sections; no large donor or state affiliation explicitly disclosed)",
+  "political_alignment": "Pro-Revolution / Anti-Former Regime (Critical of the 'Keizan'/Al-Bashir remnants; content reflects a support for the 2019 revolution ideals while maintaining a critical stance on current transitional failures)",
+  "credibility_rating": "Moderate",
+  "target_audience": "Sudanese nationals (local and diaspora) interested in domestic politics, conflict updates, and commentary",
+  "verification_status": "High confidence - Sources match domain. Key personnel (Salah al-Din Awwada) and content archives (2018-present) verified directly on site."
+}
+
+{
+  "matched_domain": "https://arabic.cnn.com",
+  "outlet_name": "CNN Arabic (سي إن إن بالعربية)",
+  "founded_year": "2002",
+  "headquarters": {
+    "city": "Dubai",
+    "country": "United Arab Emirates"
+  },
+  "ownership_structure": "Warner Bros. Discovery (via CNN Worldwide)",
+  "funding_model": "Commercial (Advertising & Content Licensing)",
+  "political_alignment": "Center-Left (Parent Network) / Pro-Western Liberal (Regional Context)",
+  "credibility_rating": "High Credibility (Major International Broadcaster)",
+  "target_audience": "Arabic-speaking population in MENA region and globally",
+  "verification_status": "High confidence - Domain is a verified subdomain of cnn.com"
+}
+
+
+{
+  "matched_domain": "sudantribune.net",
+  "outlet_name": "Sudan Tribune",
+  "founded_year": "2003",
+  "headquarters": {
+    "city": "Paris",
+    "country": "France"
+  },
+  "ownership_structure": "Sudan Tribune, LLC (Based in France; operates as an independent diaspora news entity)",
+  "funding_model": "Independent/Self-funded (Relies on advertising and diaspora support; historically non-profit orientation for press freedom)",
+  "political_alignment": "Independent / Pro-Democracy (Critical of both SAF and RSF; frequently censored by Sudanese state authorities)",
+  "credibility_rating": "Medium-High (Widely cited by UN bodies, academic institutions, and international NGOs as a primary source for Sudan conflict data)",
+  "target_audience": "Sudanese diaspora, international policymakers, and human rights monitors",
+  "verification_status": "High confidence - Domain is an active mirror/alias for the Paris-based 'Sudan Tribune' (sudantribune.com), used to circumvent regional censorship"
+}
+
+{
+  "matched_domain": "https://www.darfur24.com",
+  "outlet_name": "Darfur24",
+  "founded_year": "Circa 2018 (Active reporting verified prior to Jan 2019)",
+  "headquarters": {
+    "city": "Kampala (Operational Exile) / Originally Nyala",
+    "country": "Uganda / Sudan"
+  },
+  "ownership_structure": "Independent Media Entity (Led by Editor-in-Chief Adam Mahdi)",
+  "funding_model": "Grant-funded / Non-profit (Partners with Ayin Network; recipients of media development aid from entities like the EU/CFI)",
+  "political_alignment": "Independent / Pro-Democracy (Critical of both SAF and RSF; historically targeted by the Bashir regime)",
+  "credibility_rating": "High (Cited by Yale Humanitarian Research Lab, UN Panel of Experts, and ACLED)",
+  "target_audience": "Darfur region residents, Sudanese Diaspora, International Human Rights Monitors",
+  "verification_status": "High confidence - Sources match domain"
+}
+
+{
+  "matched_domain": "sudani.news",
+  "outlet_name": "Al-Sudani (السوداني)",
+  "founded_year": "1980 (Newspaper established; domain is a recent digital iteration)",
+  "headquarters": {
+    "city": "Port Sudan (De facto / Interim)",
+    "country": "Sudan"
+  },
+  "ownership_structure": "State-Aligned / Previously seized by Sudan Anti-Corruption Committee (2020), now effectively operating under the oversight of the Transitional Sovereignty Council (SAF-backed government).",
+  "funding_model": "State-influenced advertising / Government support",
+  "political_alignment": "Pro-Sudanese Armed Forces (SAF) / Pro-Kamil Idris Government. (The outlet consistently refers to Kamil Idris as Prime Minister, aligning with the May 2025 appointment by General Al-Burhan, and refers to the RSF as 'militia'.)",
+  "credibility_rating": "Mixed/Partisan (High factual reliability on official government decrees; Low neutrality due to heavy bias against the RSF and alignment with the Port Sudan administration.)",
+  "target_audience": "Sudanese nationals (internal and diaspora) supporting the SAF-led government.",
+  "verification_status": "High confidence - Content matches the editorial line of the 'Al-Sudani' newspaper operating under the current Al-Burhan/Idris administration. Distinct from 'Sudani' telecom (sudani.sd)."
+}
+
+
+{
+  "matched_domain": "https://www.alsahafa.net",
+  "outlet_name": "Al-Sahafa (Sudanese Daily Newspaper)",
+  "founded_year": "1961",
+  "headquarters": {
+    "city": "Khartoum",
+    "country": "Sudan"
+  },
+  "ownership_structure": "Historically State-Controlled (Acquired by the National Intelligence and Security Service [NISS] in 2013). Current domain ownership is ambiguous and likely held by a domain parking service.",
+  "funding_model": "State/Intelligence Funding (Historical); currently domain monetization/ad-parking",
+  "political_alignment": "Pro-Government / State-Controlled (Post-2013 NISS acquisition)",
+  "credibility_rating": "Low (Historical censorship/state control; Current domain status is a 'Zombie' site)",
+  "target_audience": "Sudanese public, Arabic-speaking region",
+  "verification_status": "Medium confidence - Domain matches historical Sudanese outlet but currently appears expired/parked"
+}
+
+{
+  "matched_domain": "https://www.aljazeera.net",
+  "outlet_name": "Al Jazeera Arabic (Al Jazeera Media Network)",
+  "founded_year": "1996",
+  "headquarters": {
+    "city": "Doha",
+    "country": "Qatar"
+  },
+  "ownership_structure": "Al Jazeera Media Network (A 'Private Foundation for Public Benefit' wholly owned and funded by the State of Qatar)",
+  "funding_model": "State-sponsored (Receives approx. 90% of funding from the Qatari government)",
+  "political_alignment": "Aligns with Qatari foreign policy; historically supportive of political Islam (e.g., Muslim Brotherhood) and Arab Spring movements; critical of rival regional regimes (e.g., Saudi Arabia, UAE, Egypt) while refraining from criticism of Qatari domestic affairs.",
+  "credibility_rating": "Mixed (High production value and extensive regional access; however, editorial independence is frequently questioned regarding Qatari geopolitical interests and specific regional conflicts)",
+  "target_audience": "Arabic-speaking population (Middle East and North Africa)",
+  "verification_status": "High confidence - Sources match domain (Distinguished from Al Jazeera English)"
+}
+
+{
+  "matched_domain": "https://www.skynewsarabia.com",
+  "outlet_name": "Sky News Arabia",
+  "founded_year": "2012",
+  "headquarters": {
+    "city": "Abu Dhabi",
+    "country": "United Arab Emirates"
+  },
+  "ownership_structure": "50/50 Joint Venture between Sky Group (a Comcast subsidiary, UK) and International Media Investments (IMI, UAE). IMI is a private investment vehicle controlled by Sheikh Mansour bin Zayed Al Nahyan, Vice President of the UAE.",
+  "funding_model": "Commercial (Advertising) with capital backing from state-linked investment partner (IMI)",
+  "political_alignment": "Pro-UAE / State-Aligned (Pan-Arab). While the outlet claims editorial independence, external analysis indicates coverage consistently aligns with UAE foreign policy interests, particularly regarding regional conflicts (e.g., Sudan, Yemen) and diplomatic relations (e.g., Qatar blockade, Israel normalization).",
+  "credibility_rating": "Mixed. High production standards and reliable for general international news due to Sky Group affiliation; however, credibility is contested on regional geopolitical topics where UAE state interests are involved (e.g., accusations of 'whitewashing' RSF actions in Sudan).",
+  "target_audience": "Arabic-speaking population across the Middle East and North Africa (MENA)",
+  "verification_status": "High confidence - Sources match domain"
+}
+
+{
+  "matched_domain": "https://www.france24.com",
+  "outlet_name": "France 24",
+  "founded_year": "2006",
+  "headquarters": {
+    "city": "Issy-les-Moulineaux",
+    "country": "France"
+  },
+  "ownership_structure": "Wholly owned by France Médias Monde, a French state-owned holding company (100% shareheld by the French State via Agence des participations de l'État)",
+  "funding_model": "Publicly funded (formerly via license fee, currently via allocated VAT revenue following 2022 reform) with supplementary advertising revenue",
+  "political_alignment": "Least Biased / Center (Sources: Media Bias/Fact Check, AllSides, Biasly)",
+  "credibility_rating": "High Credibility (High factual reporting standard)",
+  "target_audience": "Global international audience (Broadcasts in French, English, Arabic, and Spanish)",
+  "verification_status": "High confidence - Sources match domain"
+}
+
+{
+  "matched_domain": "arabic.euronews.com",
+  "outlet_name": "Euronews (Arabic Edition)",
+  "founded_year": "1993 (Parent Network); Arabic service launched 1997, re-launched 2008",
+  "headquarters": {
+    "city": "Lyon",
+    "country": "France"
+  },
+  "ownership_structure": "Majority owned (approx. 98%) by Alpac Capital, a Portuguese investment fund led by Pedro Vargas David and Luís Santos. (Acquired from Media Globe Networks in 2022).",
+  "funding_model": "Hybrid: Commercial advertising, sponsored content (including nation-branding partnerships with governments such as Qatar, UAE, and Azerbaijan), and European Commission contracts/grants.",
+  "political_alignment": "Euro-Centrist / Center-Left. (Promotes European Union values/perspective; generally neutral reporting but criticized for 'soft' coverage of state sponsors).",
+  "credibility_rating": "High Credibility / Mostly Factual (Rated 'Left-Center' by Media Bias/Fact Check; occasional issues with distinguishing sponsored content from news).",
+  "target_audience": "Arabic-speaking audiences in the MENA region (Middle East & North Africa) and the European diaspora.",
+  "verification_status": "High confidence - Domain is the official Arabic-language subdomain of the Euronews SA network."
+}
+
+
+{
+  "matched_domain": "https://alalam.ir",
+  "outlet_name": "Al-Alam News Network (Al-Alam TV)",
+  "founded_year": "2003",
+  "headquarters": {
+    "city": "Tehran",
+    "country": "Iran"
+  },
+  "ownership_structure": "Islamic Republic of Iran Broadcasting (IRIB) - State-Owned Corporation",
+  "funding_model": "State-funded (Government of the Islamic Republic of Iran)",
+  "political_alignment": "Far-Right / Authoritarian (Iranian State Propaganda); Pro-Shia Axis of Resistance; Anti-West/Anti-Israel",
+  "credibility_rating": "Low Credibility (State-controlled media; designated as a disinformation outlet by US authorities; subject to US domain seizures in 2021)",
+  "target_audience": "Arabic-speaking populations in the Middle East and North Africa (specifically Iraq, Lebanon, and Bahrain)",
+  "verification_status": "High confidence - Domain explicitly matches IRIB's official Arabic-language broadcast portal"
+}
+
+
+{
+  "matched_domain": "arabic.rt.com",
+  "outlet_name": "RT Arabic (formerly Rusiya Al-Yaum)",
+  "founded_year": "2007",
+  "headquarters": {
+    "city": "Moscow",
+    "country": "Russia"
+  },
+  "ownership_structure": "ANO TV-Novosti (Autonomous Non-Profit Organization created by state news agency RIA Novosti)",
+  "funding_model": "State-funded (Directly financed by the Federal Budget of the Russian Federation)",
+  "political_alignment": "Pro-Kremlin / Russian State Propaganda (Consistently aligns with Russian foreign policy interests)",
+  "credibility_rating": "Low / Questionable (Widely classified as a state-controlled propaganda outlet by international watchdogs and platform labels)",
+  "target_audience": "Arabic-speaking populations in the Middle East, North Africa, and Europe",
+  "verification_status": "High confidence - Sources match domain"
+}
+
+{
+  "matched_domain": "https://www.alsumaria.tv",
+  "outlet_name": "Al Sumaria TV (Alsumaria)",
+  "founded_year": "2004",
+  "headquarters": {
+    "city": "Baghdad",
+    "country": "Iraq"
+  },
+  "ownership_structure": "Al Sumaria Group (Private consortium of Iraqi and Lebanese businessmen, including Chairman Chafic Tabet)",
+  "funding_model": "Commercial Advertising (Sales managed by Choueiri Group / DNA)",
+  "political_alignment": "Independent / Liberal / Nationalist (Self-described as independent and apolitical; noted for a liberal editorial line that promotes Iraqi unity)",
+  "credibility_rating": "Moderate to High (Regional Context) - Frequently cited as a primary source by international monitors like the Institute for the Study of War (ISW); no specific rating from Western watchdogs like NewsGuard.",
+  "target_audience": "Iraqi public and Pan-Arab viewers",
+  "verification_status": "High confidence - Sources match domain"
+}
+
+{
+  "matched_domain": "https://alhiwar.tv",
+  "outlet_name": "Al Hiwar TV (قناة الحوار)",
+  "founded_year": "2006",
+  "headquarters": {
+    "city": "London",
+    "country": "United Kingdom"
+  },
+  "ownership_structure": "Sage Media Limited (UK Company No. 05462823). The channel was founded and is chaired by Dr. Azzam Al-Tamimi.",
+  "funding_model": "Political/Donor Patronage. The operating company (Sage Media Ltd) is a micro-entity with financial profiles suggesting reliance on external funding rather than commercial advertising. It is widely associated with Muslim Brotherhood-aligned networks and has historically faced accusations of receiving support from Qatar (though officially denied).",
+  "political_alignment": "Islamist / Pro-Muslim Brotherhood. The outlet is explicitly anti-Zionist, supportive of Hamas (often framing it as 'resistance'), and critical of the post-2013 Egyptian government, UAE, and Saudi Arabia.",
+  "credibility_rating": "Mixed/Low. While a legally registered UK broadcaster, it has been flagged by watchdogs (e.g., CST) and regulators (Ofcom) for airing content deemed antisemitic or supportive of proscribed groups. It operates as a partisan ideological platform rather than a neutral news source.",
+  "target_audience": "Arabic-speaking diaspora in Europe/UK and the wider Arab world, particularly those sympathetic to political Islam.",
+  "verification_status": "High confidence - Domain explicitly matches UK corporate filings for Sage Media Limited and public profiles of founder Azzam Al-Tamimi."
+}
+
+
+{
+  "matched_domain": "https://www.almasryalyoum.com",
+  "outlet_name": "Al-Masry Al-Youm (المصري اليوم)",
+  "founded_year": "2004",
+  "headquarters": {
+    "city": "Cairo",
+    "country": "Egypt"
+  },
+  "ownership_structure": "Al-Masry Al-Youm for Journalism and Publication (Privately owned by the Diab family; Founder: Salah Diab)",
+  "funding_model": "Private Investment (Consortium of Egyptian businessmen) and Commercial Advertising",
+  "political_alignment": "Liberal / Independent (Reformist leaning; historically critical of state narratives but subject to national press regulations)",
+  "credibility_rating": "High (Widely regarded as one of Egypt's premier independent newspapers)",
+  "target_audience": "Egyptian general public, particularly the urban middle class and youth",
+  "verification_status": "High confidence - Sources match domain"
+}
+
+
+{
+  "matched_domain": "https://www.elkhabar.com",
+  "outlet_name": "El Khabar (الخبر)",
+  "founded_year": "1990",
+  "headquarters": {
+    "city": "Algiers (Hydra district)",
+    "country": "Algeria"
+  },
+  "ownership_structure": "SPA El Khabar (Joint-stock company owned by a collective of founding journalists and their heirs). Note: A high-profile attempt to sell the outlet to industrial conglomerate Cevital (Issad Rebrab) in 2016 was blocked by the Algerian courts, reverting ownership to the original collective.",
+  "funding_model": "Commercial (Advertising revenue, newspaper sales, and income from subsidiary printing/distribution services)",
+  "political_alignment": "Independent / Centre-Left (Historically critical of the government/status quo; opposes Islamist extremism and authoritarianism)",
+  "credibility_rating": "High (Widely regarded as one of Algeria's most popular and reliable independent dailies, though operates under significant state pressure)",
+  "target_audience": "General Algerian public (Arabic-speaking majority)",
+  "verification_status": "High confidence - Sources explicitly match domain 'elkhabar.com' to the major Algerian daily newspaper."
+}

@@ -10,20 +10,20 @@ else:
     # On Ubuntu, load from absolute path
     load_dotenv('/var/www/sudanese.news/shared/.env')
 
-# Default database URL
-DEFAULT_DB_URL = 'sqlite:////var/www/sudanese_news/shared/news_aggregator.db' if platform.system() != 'Windows' else 'sqlite:///../shared_models/news_aggregator.db'
+# Default database URL for source metadata
+DEFAULT_SOURCE_METADATA_DB_URL = 'sqlite:///../shared_models/source_details.db' if platform.system() == 'Windows' else 'sqlite:////var/www/sudanese_news/shared/source_details.db'
 
-def get_database_url() -> str:
-    """Get database URL from environment or use default"""
-    return os.getenv('DATABASE_URL', DEFAULT_DB_URL)
+def get_source_metadata_database_url() -> str:
+    """Get source metadata database URL from environment or use default"""
+    return os.getenv('SOURCE_METADATA_DATABASE_URL', DEFAULT_SOURCE_METADATA_DB_URL)
 
 import logging
 
 logger = logging.getLogger(__name__)
 
-def create_engine_instance():
-    """Create SQLAlchemy engine"""
-    db_url = get_database_url()
+def create_source_metadata_engine():
+    """Create SQLAlchemy engine for source metadata database"""
+    db_url = get_source_metadata_database_url()
     # Mask password if present
     safe_url = db_url
     if '@' in db_url:
@@ -40,23 +40,23 @@ def create_engine_instance():
                     safe_url = f"{protocol_part}//{user}:****@{suffix}"
         except:
             pass # Fallback to showing full URL if parsing fails (or just don't log it)
-            
-    logger.info(f"Connecting to database: {safe_url}")
+
+    logger.info(f"Connecting to source metadata database: {safe_url}")
     return create_engine(db_url, echo=False)  # Set echo=True for debugging
 
-# Create engine
-engine = create_engine_instance()
+# Create engine for source metadata
+source_metadata_engine = create_source_metadata_engine()
 
-# Create session factory
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+# Create session factory for source metadata
+SourceMetadataSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=source_metadata_engine)
 
-def get_session() -> Session:
-    """Get a database session"""
-    return SessionLocal()
+def get_source_metadata_session() -> Session:
+    """Get a source metadata database session"""
+    return SourceMetadataSessionLocal()
 
-def get_db():
+def get_source_metadata_db():
     """Dependency for FastAPI-style dependency injection"""
-    db = SessionLocal()
+    db = SourceMetadataSessionLocal()
     try:
         yield db
     finally:

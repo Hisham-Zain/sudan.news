@@ -6,7 +6,7 @@ if platform.system() == 'Windows':
     load_dotenv()
 else:
     # On Ubuntu, load from absolute path
-    load_dotenv('/var/www/sudanese_news/shared/.env')
+    load_dotenv('/var/www/sudanese.news/shared/.env')
 
 # Database
 DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///news_aggregator.db')

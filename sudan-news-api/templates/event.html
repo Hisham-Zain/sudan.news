@@ -446,6 +446,83 @@
             border-radius: 3px;
         }
 
+        /* Loading skeleton styles */
+        .skeleton-loader {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skeleton-loader.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .skeleton-header, .skeleton-bias-chart, .skeleton-article {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 4px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .skeleton-header {
+            height: 40px;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        .skeleton-bias-chart {
+            height: 150px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .skeleton-article {
+            height: 200px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        /* Sort controls */
+        .sort-controls {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .sort-select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: white;
+            font-size: 14px;
+            min-width: 180px;
+        }
+
+        /* Interactive bias segments */
+        .bias-segment:hover {
+            opacity: 0.9;
+            cursor: pointer;
+            transform: scaleY(1.05);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        /* Filter badge for active filters */
+        .filter-badge {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 8px;
+            font-weight: bold;
+        }
+
         /* Touch-friendly improvements */
         @media (hover: none) and (pointer: coarse) {
 
@@ -563,6 +640,14 @@
 </head>
 
 <body>
+    <!-- Skeleton Loader -->
+    <div class="skeleton-loader" id="page-loader">
+        <div class="skeleton-header"></div>
+        <div class="skeleton-bias-chart"></div>
+        <div class="skeleton-article"></div>
+        <div class="skeleton-article"></div>
+        <div class="skeleton-article"></div>
+    </div>
     <header class="header">
         <div class="header-actions">
             <a href="{{ url_for('index') }}">
@@ -654,6 +739,19 @@
             </div>
         </div>
         {% endif %}
+
+        <!-- Sort Controls -->
+        <div class="sort-controls">
+            <select id="article-sort" class="sort-select">
+                <option value="default">ترتيب افتراضي</option>
+                <option value="date-desc">أحدث أولاً</option>
+                <option value="date-asc">أقدم أولاً</option>
+                <option value="bias-pro">مؤيد أولاً</option>
+                <option value="bias-oppose">معارض أولاً</option>
+                <option value="bias-neutral">محايد أولاً</option>
+            </select>
+        </div>
+
         <div class="sources-container">
             {% for article in cluster.articles %}
             <div class="source-card">
@@ -738,8 +836,175 @@
         {% endif %}
     </div>
 
+    <!-- JavaScript for UX improvements -->
+    <script>
+        // Show loading state on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const loader = document.getElementById('page-loader');
+            if (loader) {
+                loader.classList.add('active');
 
+                // Hide loader when page is ready
+                setTimeout(() => {
+                    loader.classList.remove('active');
+                }, 1000);
+            }
 
+            // Initialize article sorting
+            const sortSelect = document.getElementById('article-sort');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    sortArticles(this.value);
+                });
+            }
+
+            // Initialize bias segment interactivity
+            document.querySelectorAll('.bias-segment').forEach(segment => {
+                segment.addEventListener('click', function() {
+                    const biasType = this.classList.contains('segment-pro') ? 'pro' :
+                                    this.classList.contains('segment-oppose') ? 'oppose' : 'neutral';
+                    filterArticlesByBias(biasType);
+                });
+            });
+        });
+
+        // Article sorting function
+        function sortArticles(sortBy) {
+            const container = document.querySelector('.sources-container');
+            if (!container) return;
+
+            const articles = Array.from(container.querySelectorAll('.source-card'));
+            let sortedArticles;
+
+            switch(sortBy) {
+                case 'date-desc':
+                    sortedArticles = articles.sort((a, b) => {
+                        const dateA = new Date(a.querySelector('.source-meta span:nth-child(6)').textContent.split(': ')[1]);
+                        const dateB = new Date(b.querySelector('.source-meta span:nth-child(6)').textContent.split(': ')[1]);
+                        return dateB - dateA;
+                    });
+                    break;
+
+                case 'date-asc':
+                    sortedArticles = articles.sort((a, b) => {
+                        const dateA = new Date(a.querySelector('.source-meta span:nth-child(6)').textContent.split(': ')[1]);
+                        const dateB = new Date(b.querySelector('.source-meta span:nth-child(6)').textContent.split(': ')[1]);
+                        return dateA - dateB;
+                    });
+                    break;
+
+                case 'bias-pro':
+                    sortedArticles = articles.sort((a, b) => {
+                        const biasA = getBiasPriority(a, 'pro');
+                        const biasB = getBiasPriority(b, 'pro');
+                        return biasB - biasA;
+                    });
+                    break;
+
+                case 'bias-oppose':
+                    sortedArticles = articles.sort((a, b) => {
+                        const biasA = getBiasPriority(a, 'oppose');
+                        const biasB = getBiasPriority(b, 'oppose');
+                        return biasB - biasA;
+                    });
+                    break;
+
+                case 'bias-neutral':
+                    sortedArticles = articles.sort((a, b) => {
+                        const biasA = getBiasPriority(a, 'neutral');
+                        const biasB = getBiasPriority(b, 'neutral');
+                        return biasB - biasA;
+                    });
+                    break;
+
+                default:
+                    // Default sorting - no change
+                    return;
+            }
+
+            // Re-append sorted articles
+            sortedArticles.forEach(article => {
+                container.appendChild(article);
+            });
+        }
+
+        function getBiasPriority(article, targetBias) {
+            const biasSpan = article.querySelector('.source-meta span:nth-child(4) strong');
+            if (!biasSpan) return 0;
+
+            const biasText = biasSpan.textContent;
+            if (targetBias === 'pro' && biasText.includes('مؤيد')) return 1;
+            if (targetBias === 'oppose' && biasText.includes('معارض')) return 1;
+            if (targetBias === 'neutral' && biasText.includes('محايد')) return 1;
+            return 0;
+        }
+
+        // Bias filtering function
+        function filterArticlesByBias(biasType) {
+            const articles = document.querySelectorAll('.source-card');
+            const filterBadge = document.querySelector('.filter-badge');
+            const sortControls = document.querySelector('.sort-controls');
+
+            // Remove existing filter badge
+            if (filterBadge) {
+                filterBadge.remove();
+            }
+
+            // Add new filter badge
+            const badge = document.createElement('span');
+            badge.className = 'filter-badge';
+            badge.textContent = `مفلتر: ${biasType === 'pro' ? 'مؤيد' : biasType === 'oppose' ? 'معارض' : 'محايد'}`;
+
+            if (sortControls) {
+                sortControls.appendChild(badge);
+            }
+
+            // Filter articles
+            articles.forEach(article => {
+                const biasSpan = article.querySelector('.source-meta span:nth-child(4) strong');
+                if (!biasSpan) {
+                    article.style.display = 'none';
+                    return;
+                }
+
+                const biasText = biasSpan.textContent;
+                if (
+                    (biasType === 'pro' && biasText.includes('مؤيد')) ||
+                    (biasType === 'oppose' && biasText.includes('معارض')) ||
+                    (biasType === 'neutral' && biasText.includes('محايد'))
+                ) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            // Add clear filter button
+            const clearButton = document.createElement('button');
+            clearButton.textContent = '× إزالته التصفية';
+            clearButton.style.marginLeft = '10px';
+            clearButton.style.background = 'none';
+            clearButton.style.border = 'none';
+            clearButton.style.color = '#1976d2';
+            clearButton.style.cursor = 'pointer';
+            clearButton.style.fontSize = '14px';
+
+            clearButton.addEventListener('click', function() {
+                // Show all articles
+                articles.forEach(article => {
+                    article.style.display = 'block';
+                });
+
+                // Remove filter badge and clear button
+                if (badge) badge.remove();
+                if (clearButton) clearButton.remove();
+            });
+
+            if (sortControls) {
+                sortControls.appendChild(clearButton);
+            }
+        }
+    </script>
 </body>
 
 </html>

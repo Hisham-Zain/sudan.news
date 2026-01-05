@@ -30,7 +30,7 @@ if platform.system() == 'Windows':
     load_dotenv()
 else:
     # On Ubuntu, load from absolute path
-    load_dotenv('/var/www/sudanese_news/shared/.env')
+    load_dotenv('/var/www/sudanese.news/shared/.env')
 
 # Get script directory
 script_dir = os.path.dirname(os.path.abspath(__file__))

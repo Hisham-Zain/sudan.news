@@ -313,6 +313,245 @@
         background-color: #dc3545;
     }
 
+    /* Source Badges - NEW */
+    .source-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin: 8px 0;
+        font-size: 11px;
+    }
+
+    .source-badge {
+        padding: 2px 6px;
+        border-radius: 12px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .pro-badge {
+        background-color: #e7f3ff;
+        color: #0066cc;
+        border: 1px solid #b3e0ff;
+    }
+
+    .oppose-badge {
+        background-color: #ffe7e7;
+        color: #cc0000;
+        border: 1px solid #ffb3b3;
+    }
+
+    .neutral-badge {
+        background-color: #f0f0f0;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+    .source-count {
+        background-color: #e9ecef;
+        color: #666;
+        padding: 2px 6px;
+        border-radius: 12px;
+        font-size: 11px;
+    }
+
+    .badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+
+    .pro-dot { background-color: #007bff; }
+    .neutral-dot { background-color: #6c757d; }
+    .oppose-dot { background-color: #dc3545; }
+
+    /* Onboarding Modal Styles */
+    .onboarding-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .onboarding-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .onboarding-modal {
+        background: white;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        position: relative;
+        direction: ltr;
+    }
+
+    .onboarding-screen {
+        display: none;
+        padding: 40px 30px;
+        text-align: center;
+        min-height: 400px;
+    }
+
+    .onboarding-screen.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .onboarding-screen h1 {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 0 0 16px 0;
+        color: #333;
+    }
+
+    .onboarding-screen p {
+        font-size: 18px;
+        color: #666;
+        margin: 0 0 20px 0;
+        line-height: 1.5;
+    }
+
+    .onboarding-footer {
+        font-size: 14px;
+        color: #999;
+        margin: 20px 0 0 0;
+    }
+
+    .bias-preview {
+        display: flex;
+        gap: 20px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bias-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+    }
+
+    .bias-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+    }
+
+    .bias-dot.pro-saf { background-color: #007bff; }
+    .bias-dot.anti-saf { background-color: #dc3545; }
+    .bias-dot.neutral { background-color: #6c757d; }
+
+    .onboarding-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-skip {
+        background: transparent;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+    .btn-skip:hover {
+        background: #f8f9fa;
+    }
+
+    .btn-next {
+        background: #28a745;
+        color: white;
+    }
+
+    .btn-next:hover {
+        background: #218838;
+    }
+
+    .btn-primary {
+        background: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #0056b3;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+    .btn-secondary:hover {
+        background: #f8f9fa;
+    }
+
+    .methodology-link {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .methodology-link:hover {
+        text-decoration: underline;
+    }
+
+    .progress-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+    }
+
+    .progress-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ddd;
+        transition: background 0.3s ease;
+    }
+
+    .progress-dot.active {
+        background: #28a745;
+    }
+
     @media (max-width: 768px) {
         .main-layout {
             flex-direction: column;
@@ -341,6 +580,33 @@
             order: 2;
             flex-basis: 100%;
             margin: 10px 0 0 0;
+        }
+
+        .onboarding-modal {
+            width: 95%;
+            padding: 20px;
+        }
+
+        .onboarding-screen {
+            padding: 30px 20px;
+        }
+
+        .onboarding-screen h1 {
+            font-size: 28px;
+        }
+
+        .onboarding-screen p {
+            font-size: 16px;
+        }
+
+        .onboarding-buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 200px;
         }
     }
 </style>
@@ -490,6 +756,87 @@
         </section>
     </aside>
 </main>
+
+<!-- Onboarding Modal -->
+<div id="onboarding-overlay" class="onboarding-overlay">
+    <div class="onboarding-modal">
+        <!-- Screen 1: Welcome -->
+        <div id="screen-1" class="onboarding-screen active">
+            <h1>Sudanese.news</h1>
+            <p>Your window into how different outlets report the war in Sudan.</p>
+            <div class="onboarding-footer">Unbiased. Organized. Transparent.</div>
+            <div class="onboarding-buttons">
+                <button class="btn btn-skip" onclick="skipOnboarding()">Skip</button>
+                <button class="btn btn-next" onclick="nextScreen()">Next</button>
+            </div>
+        </div>
+
+        <!-- Screen 2: What We Do -->
+        <div id="screen-2" class="onboarding-screen">
+            <h1>See Every Side of the Story</h1>
+            <p>We collect news from local and international sources and show how each outlet positions itself in the conflict.</p>
+            <div class="bias-preview">
+                <div class="bias-item">
+                    <div class="bias-dot pro-saf"></div>
+                    <span>Pro-SAF</span>
+                </div>
+                <div class="bias-item">
+                    <div class="bias-dot anti-saf"></div>
+                    <span>Anti-SAF</span>
+                </div>
+                <div class="bias-item">
+                    <div class="bias-dot neutral"></div>
+                    <span>Neutral</span>
+                </div>
+            </div>
+            <div class="onboarding-buttons">
+                <button class="btn btn-skip" onclick="skipOnboarding()">Skip</button>
+                <button class="btn btn-next" onclick="nextScreen()">Next</button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Compare Coverage -->
+        <div id="screen-3" class="onboarding-screen">
+            <h1>One Event, Multiple Narratives</h1>
+            <p>Articles about the same incident are grouped together so you can compare how different outlets report it.</p>
+            <div class="onboarding-footer">Discover patterns, differences, and hidden angles.</div>
+            <div class="onboarding-buttons">
+                <button class="btn btn-skip" onclick="skipOnboarding()">Skip</button>
+                <button class="btn btn-next" onclick="nextScreen()">Next</button>
+            </div>
+        </div>
+
+        <!-- Screen 4: Smart Analysis -->
+        <div id="screen-4" class="onboarding-screen">
+            <h1>Clear, Fast Summaries</h1>
+            <p>Every article includes a short AI-assisted summary to help you quickly understand the story.</p>
+            <a href="#" class="methodology-link">Learn about our methodology →</a>
+            <div class="onboarding-buttons">
+                <button class="btn btn-skip" onclick="skipOnboarding()">Skip</button>
+                <button class="btn btn-next" onclick="nextScreen()">Next</button>
+            </div>
+        </div>
+
+        <!-- Screen 5: Your News Starts Here -->
+        <div id="screen-5" class="onboarding-screen">
+            <h1>Stay Informed. Stay Aware.</h1>
+            <p>Read articles directly inside the app, search, filter by source, and explore detailed bias tagging.</p>
+            <div class="onboarding-buttons">
+                <button class="btn btn-primary" onclick="startReading()">Start Reading</button>
+                <button class="btn btn-secondary" onclick="skipOnboarding()">Skip</button>
+            </div>
+        </div>
+
+        <!-- Progress Dots -->
+        <div class="progress-dots">
+            <div class="progress-dot active" data-screen="1"></div>
+            <div class="progress-dot" data-screen="2"></div>
+            <div class="progress-dot" data-screen="3"></div>
+            <div class="progress-dot" data-screen="4"></div>
+            <div class="progress-dot" data-screen="5"></div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block scripts %}
@@ -607,6 +954,7 @@
 
         let biasBarHtml = '';
         let coverageTextHtml = '';
+        let sourceBadgesHtml = '';
 
         if (cluster.bias_distribution) {
             const pro = cluster.bias_distribution.pro_saf.percentage;
@@ -640,6 +988,42 @@
             `;
         }
 
+        // NEW: Generate source badges HTML
+        if (cluster.articles && cluster.articles.length > 0) {
+            const sourcesToShow = cluster.articles.slice(0, 3); // Show up to 3 sources
+            const remainingSources = cluster.number_of_sources - sourcesToShow.length;
+
+            sourceBadgesHtml = '<div class="source-badges">';
+
+            sourcesToShow.forEach(article => {
+                // Use the actual data structure from cluster repository
+                const sourceName = article.source_name || article.source_url || 'مصدر مجهول';
+                const sourceBias = article.source_bias;
+
+                if (sourceBias) {
+                    const biasClass = sourceBias === 'Pro-SAF' ? 'pro-badge' :
+                                     sourceBias === 'Oppose-SAF' ? 'oppose-badge' : 'neutral-badge';
+                    const dotClass = sourceBias === 'Pro-SAF' ? 'pro-dot' :
+                                    sourceBias === 'Oppose-SAF' ? 'oppose-dot' : 'neutral-dot';
+                    const biasLabel = sourceBias === 'Pro-SAF' ? 'مؤيد' :
+                                    sourceBias === 'Oppose-SAF' ? 'معارض' : 'محايد';
+
+                    sourceBadgesHtml += `
+                        <span class="source-badge ${biasClass}" title="${sourceName} - ${biasLabel}">
+                            <span class="badge-dot ${dotClass}"></span>
+                            ${sourceName.substring(0, 15)}
+                        </span>
+                    `;
+                }
+            });
+
+            if (remainingSources > 0) {
+                sourceBadgesHtml += `<span class="source-count">+${remainingSources}</span>`;
+            }
+
+            sourceBadgesHtml += '</div>';
+        }
+
         card.innerHTML = `
             ${imageHtml}
             <div class="news-content">
@@ -647,6 +1031,7 @@
                 <h3 class="news-title">${cluster.headline}</h3>
                 ${biasBarHtml}
                 ${coverageTextHtml}
+                ${sourceBadgesHtml}
                 <div class="news-meta">
                     <span>عدد المصادر: ${cluster.number_of_sources}</span>
                     <span>${timeAgoArabic(cluster.first_date_of_publication)}</span>
@@ -686,6 +1071,67 @@
             clearTimeout(timeout);
             timeout = setTimeout(later, wait);
         };
+    }
+
+    // Onboarding functionality
+    let currentScreen = 1;
+    const totalScreens = 5;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show onboarding on page load
+        showOnboarding();
+
+        // Load categories as before
+        loadCategories();
+    });
+
+    function showOnboarding() {
+        const overlay = document.getElementById('onboarding-overlay');
+        overlay.classList.add('show');
+    }
+
+    function hideOnboarding() {
+        const overlay = document.getElementById('onboarding-overlay');
+        overlay.classList.remove('show');
+    }
+
+    function nextScreen() {
+        if (currentScreen < totalScreens) {
+            showScreen(currentScreen + 1);
+        }
+    }
+
+    function skipOnboarding() {
+        hideOnboarding();
+    }
+
+    function startReading() {
+        hideOnboarding();
+    }
+
+    function showScreen(screenNumber) {
+        // Hide all screens
+        document.querySelectorAll('.onboarding-screen').forEach(screen => {
+            screen.classList.remove('active');
+        });
+
+        // Show the target screen
+        const targetScreen = document.getElementById(`screen-${screenNumber}`);
+        if (targetScreen) {
+            targetScreen.classList.add('active');
+            currentScreen = screenNumber;
+            updateProgressDots();
+        }
+    }
+
+    function updateProgressDots() {
+        document.querySelectorAll('.progress-dot').forEach((dot, index) => {
+            if (index + 1 === currentScreen) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
     }
 </script>
 {% endblock %}

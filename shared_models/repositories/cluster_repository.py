@@ -1,10 +1,9 @@
 from sqlalchemy.orm import Session
-from sqlalchemy import desc, func, and_, cast, Text
+from sqlalchemy import desc, func, and_, cast, Text, or_
 from typing import List, Optional, Dict, Any, Tuple
 from datetime import datetime
 import numpy as np
 from ..models import Cluster, Article, cluster_articles, Entity
-from ..timezone_utils import now, format_datetime
 from ..timezone_utils import now, format_datetime
 
 class ClusterRepository:
